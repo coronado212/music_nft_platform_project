@@ -19,8 +19,8 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 def load_contract():
 
     # Load the contract ABI
-    with open(Path('./contracts_copy/compiled/musicnft_abi.json')) as f:
-        musicnft_abi = json.load(f)
+    with open(Path('./contracts_buyer/compiled/musicnftbuyer_abi.json')) as f:
+        musicnftbuyer_abi = json.load(f)
 
     # Set the contract address (this is the address of the deployed contract)
     contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
@@ -28,7 +28,7 @@ def load_contract():
     # Load the contract
     contract = w3.eth.contract(
         address=contract_address,
-        abi=musicnft_abi
+        abi=musicnftbuyer_abi
     )
 
     return contract
@@ -36,38 +36,35 @@ def load_contract():
 contract = load_contract()
 
 ################################################################################
-# Register New Audio
+# Display Available NFTs
 ################################################################################
-st.title("Buy New Audio")
-# accounts = w3.eth.accounts
-audio_hashes=['fdsafd', 'fdsafds,a', 'fdsafdsa']
+st.title("BeatBlocks - Music NFT Marketplace")
+
+st.title("Fan Portal")
+
+st.markdown("Available Audio NFTs")
+accounts = w3.eth.accounts
+
+# Use a streamlit component to get the address of the audio owner from the user
+address = st.selectbox("Select Audio Owner", options=accounts)
+
+audio_hashes=['https://gateway.pinata.cloud/ipfs/QmbbaGdg8sPTyE7XVQ93kiNpHJx4ZqEbFP3gLdebyAQ7ip']
 # get the full list of tokens and filter by where owner is artist.
 
-# Get a list of tokens available for sale
-# token_uri = contract.functions.tokenURI(token_id).call()
+token_id = st.selectbox("Audio Tokens", (audio_hashes))
 
+if st.button("Display"):
 
-# Use a streamlit component to get the list of tokens available 
-address = st.selectbox("Select Audio", options=audio_hashes)
+    nft_address = contract.functions.ownerOf(token_id).call()
 
-st.markdown(f'Here is information about seledted token')
-         #   {token.functions.get_perks()}')
+    # Get a list of tokens available for sale
+    token_uri = contract.functions.tokenURI(token_id).call()
 
-# Use button to initiate purchase
-if st.button("Purchase"):
+    # Use a streamlit component to get the list of tokens available 
+    address = st.selectbox("Select Audio", options=audio_hashes)
 
-    # Use the contract to send a transaction to the registerAudio function
-    tx_hash = contract.functions.purchase(
-        address,
-        audio_uri
-    ).transact({'from': address, 'gas': 1000000})
-    receipt = w3.eth.waitForTransactionReceipt(tx_hash)
-    st.write("Transaction receipt Mined:")
-    st.write(dict(receipt))
-    
-    st.write(f'Congrats! You just bought  a {token.functions.getType()}') 
-
-st.markdown("---")
+    token_metadata = contract.functions.contractURI().call()
+    st.markdown(f'This token includes:{token_metadata}')
 
 ################################################################################
 # Purchase a Token
@@ -77,7 +74,7 @@ if st.button("Purchase NFT"):
     # Use the contract to purchase an NFT 
     tx_hash = contract.functions.transfer(
         address,
-        audio_uri,
+        token_uri,
     ).transact({'from': address, 'gas': 1000000})
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
     st.write("Transaction receipt Mined:")

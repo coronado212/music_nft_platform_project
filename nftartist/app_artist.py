@@ -19,7 +19,7 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 def load_contract():
 
     # Load the contract ABI
-    with open(Path('/Users/edgarcoronado-macbook/Desktop/Fintech/Project_3/nftartist/contracts_artist/compiled/musicnftartist_abi.json')) as f:
+    with open(Path('./contracts_artist/compiled/musicnftartist_abi.json')) as f:
         musicnft_abi = json.load(f)
 
     # Set the contract address (this is the address of the deployed contract)
@@ -91,7 +91,7 @@ if st.button("Display"):
     st.image(token_uri)
 
     # Use the contract's 'contractURI' function to get the token metadata 
-    token_metadata = contract.functions.contractURI(token_id).call()
+    token_metadata = contract.functions.contractURI().call()
 
     st.write(f"Congrats! This token includes the following access: {token_metadata}")
     st.image(token_metadata)
