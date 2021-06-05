@@ -42,18 +42,19 @@ st.title("BeatBlocks - Music NFT Marketplace")
 
 st.title("Fan Portal")
 
-st.markdown("Available Audio NFTs")
+st.markdown("## Available Audio NFTs")
 accounts = w3.eth.accounts
 
 # Use a streamlit component to get the address of the audio owner from the user
 address = st.selectbox("Select Audio Owner", options=accounts)
 
-audio_hashes=['https://gateway.pinata.cloud/ipfs/QmbbaGdg8sPTyE7XVQ93kiNpHJx4ZqEbFP3gLdebyAQ7ip']
+audio_hashes=['QmbbaGdg8sPTyE7XVQ93kiNpHJx4ZqEbFP3gLdebyAQ7ip']
 # get the full list of tokens and filter by where owner is artist.
 
 token_id = st.selectbox("Audio Tokens", (audio_hashes))
 
 if st.button("Display"):
+    print(token_id)
 
     nft_address = contract.functions.ownerOf(token_id).call()
 
