@@ -67,7 +67,7 @@ if st.button("Purchase NFT"):
         token_uri
     ).transact({'from': seller_address, 'gas': 1000000})
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
-    st.write("Purchase completed.")
+    st.write("Congratulations! Your purchase is complete!")
     st.balloons()
 
 st.markdown("---")
@@ -87,6 +87,15 @@ buyer_token_id = st.selectbox("Show Tokens", list(range(buyer_tokens)))
 
 if st.button("Display"):
     token_uri = contract.functions.tokenURI(buyer_token_id).call()
-    st.write(f"The tokenURI is {token_uri}")
+    st.write(f"Access your recently purchased NFT below: {token_uri}")
     token_metadata = contract.functions.contractURI().call()
-    st.write(f"Congrats! This token includes the following access: {token_metadata}")
+    st.write("## The BeatBlocks VIP Experience includes the following access:")
+    st.write("* Lifetime Backstage Passes")
+    st.write("* Lifetime Front Row Concert Tickets")
+    st.write("* Lifetime Virtual Concert Tickets")
+    st.write("* Lifetime Artist Membership - Allows you to hear samples of the songs before they’re released")
+    st.write("* Remix & Royalties - When a song reaches our set popularity count, a remix version of the song is released, and NFT owners receive lifetime royalties for that song")
+    st.write("* Artist-to-Artist Access - Your favorite artist will send his team to work with you for a day on one of your songs/projects")
+    st.write("* Digital Album")
+    st.write("* Physical Album")
+    st.write("* New artist merchandise every 6 months")
