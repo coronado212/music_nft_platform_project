@@ -59,8 +59,8 @@ if st.button("Mint Audio NFT"):
         audio_uri
     ).transact({'from': address, 'gas': 1000000})
     receipt = w3.eth.waitForTransactionReceipt(tx_hash)
-    st.write("Transaction receipt Mined:")
-    st.write(dict(receipt))
+    st.write("Token minted.")
+    st.balloons()
 
 st.markdown("---")
 
@@ -88,10 +88,9 @@ if st.button("Display"):
     token_uri = contract.functions.tokenURI(token_id).call()
 
     st.write(f"The tokenURI is {token_uri}")
-    st.image(token_uri)
 
     # Use the contract's 'contractURI' function to get the token metadata 
     token_metadata = contract.functions.contractURI().call()
 
     st.write(f"Congrats! This token includes the following access: {token_metadata}")
-    st.image(token_metadata)
+    

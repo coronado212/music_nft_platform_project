@@ -21,33 +21,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "recipient",
-				"type": "address"
-			},
-			{
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "mint",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "purchase",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"name": "owner",
 				"type": "address"
 			},
@@ -128,24 +101,6 @@
 			}
 		],
 		"name": "setApprovalForAll",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "recipient",
-				"type": "address"
-			},
-			{
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -267,11 +222,11 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "balanceOf",
+		"name": "baseURI",
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
+				"type": "string"
 			}
 		],
 		"payable": false,
@@ -281,7 +236,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "baseURI",
+		"name": "contractURI",
 		"outputs": [
 			{
 				"name": "",
