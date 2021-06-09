@@ -87,10 +87,18 @@ def app():
         # Use the contract's `tokenURI` function to get the audio token's URI
         token_uri = contract.functions.tokenURI(token_id).call()
 
-        st.write(f"The tokenURI is {token_uri}")
+        st.write(f"Access your minted NFT below: {token_uri}")
 
         # Use the contract's 'contractURI' function to get the token metadata 
         token_metadata = contract.functions.contractURI().call()
-
-        st.write(f"Congrats! This token includes the following access: {token_metadata}")
+        st.write("## Your minted 'BeatBlocks VIP Experience NFT' grants the following access:")
+        st.write("* Lifetime Backstage Passes")
+        st.write("* Lifetime Front Row Concert Tickets")
+        st.write("* Lifetime Virtual Concert Tickets")
+        st.write("* Lifetime Artist Membership - Allows you to hear samples of the songs before they’re released")
+        st.write("* Remix & Royalties - When a song reaches our set popularity count, a remix version of the song is released, and NFT owners receive lifetime royalties for that song")
+        st.write("* Artist-to-Artist Access - Your favorite artist will send his team to work with you for a day on one of your songs/projects")
+        st.write("* Digital Album")
+        st.write("* Physical Album")
+        st.write("* New artist merchandise every 6 months")
         
