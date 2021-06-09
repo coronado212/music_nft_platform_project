@@ -1,5 +1,5 @@
-import app_buyer
-import app_artist
+"""Frameworks for running multiple Streamlit applications as a single app.
+"""
 import streamlit as st
 
 class MultiApp:
@@ -45,14 +45,3 @@ class MultiApp:
             format_func=lambda app: app['title'])
 
         app['function']()
-
-
-# PAGES = {
-#     "App1": app_buyer,
-#     "App2": app_artist
-# }
-# st.sidebar.title('Navigation')
-# selection = st.sidebar.radio("Go to", list(PAGES.keys()))
-# page = PAGES[selection]
-# page.app()
-
