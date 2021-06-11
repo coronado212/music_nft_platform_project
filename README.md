@@ -44,4 +44,4 @@ For the ones you like and they are at the right price, you can purchase the NFT 
 Our software engineers and contract managers, are working alongside with artist and fans to onboard the launching of Royalty payment services and music streaming in fall 2021.
 We wanted to extend on the perks for the artist as well as the fans purchasing the NFT and continue with our company mission to connect artists and fans with unique content and experiences in a way that’s never been done before.
 
-![](Images/Royalty Distribution mute.mp4)
+![](Images/royalty.mp4)
