@@ -8,7 +8,7 @@ A good chunk of the revenue is pocketed by the middlemen — those working in th
 
 How do you make it big without signing, is in fact the number one question that you ask yourself as an artist. It’s extremely hard to make it as an independent artist, which is why most, if given the chance, are ready to sign 88% of their income away to a record label. I mean, what other option do you have, right?
 
-It’s not like there’s an NFT Marketplace out there that leverages blockchain technology to cut out the middleman, increase your revenue stream, and provide you a ton of exposure and free advertising. I mean there can’t be a disruptive startup out there with a mission to connect artists and fans with unique content and experiences in a way that’s never been done before. Right? 
+It’s not like there’s an NFT Marketplace out there that leverages blockchain technology to cut out the middleman, increase your revenue stream, and provide you a ton of exposure and free advertising. I mean there can’t be a disruptive startup out there with a mission to connect artists and fans with unique content and experiences in a way that’s never been done before right? 
 
 Actually, there is, introducing BeatBlocks.
 
@@ -44,4 +44,4 @@ For the ones you like and they are at the right price, you can purchase the NFT 
 Our software engineers and contract managers, are working alongside with artist and fans to onboard the launching of Royalty payment services and music streaming in fall 2021.
 We wanted to extend on the perks for the artist as well as the fans purchasing the NFT and continue with our company mission to connect artists and fans with unique content and experiences in a way that’s never been done before.
 
-![](Images/royalty.mp4)
+![](Images/royalty.gif)
